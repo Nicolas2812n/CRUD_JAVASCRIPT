@@ -1,12 +1,12 @@
 const express = require('express');
-
+const mysql2 = require ('mysql2');
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-
+// === http ===
 app.get('/:name/:id', (req, res)=>{
     const { name,id } = req.params;
 
@@ -18,12 +18,28 @@ app.post('/', (req, res)=>{
   res.send (`${email}: ${password}`);
 });
 
+
+app.put('/', (req, res)=>{
+    res.send('Peticion PUT');
+});
+
 app.delete('/', (req, res)=>{
     res.send('Peticion DELETE');
 });
 
-app.put('/', (req, res)=>{
-    res.send('Peticion PUT');
+// === db ===
+
+const connection = mysql2.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'toor',
+    database: 'tutorial',
+
+});
+
+connection.connect((err) => {
+    if (err) throw err;
+    console.log('BD conectada');
 });
 
 
