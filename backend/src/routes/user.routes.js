@@ -9,7 +9,7 @@ const {
 
 const router = Router();
 
-router.get('//:id', readUser);
+router.get('/:id', readUser);
 
 router.post('/', createUser);
 
