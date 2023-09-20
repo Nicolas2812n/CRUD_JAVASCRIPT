@@ -28,14 +28,17 @@ const query = mysql2.format(createQuery, [first_name, age]);
 
 database.query(query, (err, result) => {
     if (err) throw err;
-    console.log(result);
+   // console.log(result);
     res.send({ massage: 'Usuario creado' });
     });
 
 }; 
 
 const updateUser = (req, res) => {
-    res.send('Peticion PUT');
+    const { id } = req.params;
+    const { first_name, age } = req.body;
+
+    const updateQuery = `UPDATE User SET first_name=?, age=?`
 };
 
 const deleteUser = (req, res) => {
