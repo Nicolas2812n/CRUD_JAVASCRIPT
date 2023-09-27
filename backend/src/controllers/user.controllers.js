@@ -29,7 +29,7 @@ const query = mysql2.format(createQuery, [first_name, age]);
 database.query(query, (err, result) => {
     if (err) throw err;
    // console.log(result);
-    res.send({ massage: 'Usuario creado' });
+    res.send({ message: 'Usuario creado' });
     });
 
 }; 
