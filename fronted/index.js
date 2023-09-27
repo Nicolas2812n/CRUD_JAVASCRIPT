@@ -82,5 +82,5 @@ formDelete.addEventListener('submit', async (e) => {
       }
     });
 
-  document.getElementById('textoDelete').innerHTML = message;
+  document.getElementById('textoDelete').innerHTML = message; 
 }); 
