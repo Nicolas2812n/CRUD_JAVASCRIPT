@@ -14,7 +14,7 @@ const readUser = (req, res ) => {
         if (result[0] !== undefined){
             res.json(result[0]);   
         }else{
-          res.json({massage: 'Usuario no encontrado'});     
+          res.json({message: 'Usuario no encontrado'});     
         }
     });
 };
